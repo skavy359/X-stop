@@ -1,34 +1,63 @@
-import React from 'react';
+import React from "react";
+import Basketball from '/client/src/assets/Basketball.png'
 
 export default function Hero() {
     return (
-        <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
-            <div className="absolute inset-0 bg-black opacity-40"></div>
-            <div className="absolute inset-0">
-                <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-                <div className="absolute bottom-20 right-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-            </div>
+        <section className="w-full bg-white overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center">
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-                <div className="text-center">
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-                        Unleash Your
-                        <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Athletic Potential
-            </span>
-                    </h1>
-                    <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
-                        Premium sports equipment and athleisure wear designed for champions. Elevate your performance, embrace your style.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-xl">
-                            Shop Equipment
-                        </button>
-                        <button className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 shadow-xl">
-                            Explore Athleisure
-                        </button>
+                {/* Main Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+
+                    {/* LEFT TEXT CONTENT */}
+                    <div className="space-y-4">
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-black">
+                            CHAMPIONS KEEP
+                        </h1>
+
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-black">
+                            PLAYING
+                        </h1>
+
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-gray-600">
+                            UNTIL THEY GET IT
+                        </h1>
+
+                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-gray-400">
+                            RIGHT
+                        </h1>
+                    </div>
+
+                    {/* RIGHT IMAGE PLACEHOLDER */}
+                    <div className="relative flex justify-center lg:justify-end">
+                        {/* IMAGE PLACEHOLDER */}
+                        <div className="w-full max-w-md aspect-[3/4] bg-gray-200 rounded-xl flex items-center justify-center">
+              <span className="text-gray-500 text-lg">
+               <img
+                   src={Basketball}
+                   alt="Athlete"
+                   className="max-w-md w-full object-contain"
+               />
+              </span>
+                        </div>
+
+                        {/*
+              Replace above div with:
+              <img
+                src="/your-image.png"
+                alt="Athlete"
+                className="max-w-md w-full object-contain"
+              />
+            */}
                     </div>
                 </div>
+            </div>
+
+            {/* CTA BUTTON */}
+            <div className="flex justify-center mt-12 mb-16">
+                <button className="border-2 border-black px-8 py-3 text-black font-semibold hover:bg-black hover:text-white transition">
+                    Explore
+                </button>
             </div>
         </section>
     );
