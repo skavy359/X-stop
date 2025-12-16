@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import connectCloudinary from './config/cloudinary.js';
+import router from './routes/userRoutes.js';
 
 // App setup
 const app = express();
@@ -15,6 +16,8 @@ app.use(express.json());
 app.use(cors());
 
 // api endpoints
+app.use('/api/user', router);
+
 app.get('/', (req, res) => {
   res.send('Welcome to the X-stop API');
 });
