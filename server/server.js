@@ -4,6 +4,7 @@ import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import connectCloudinary from './config/cloudinary.js';
 import router from './routes/userRoutes.js';
+import productRouter from './routes/productRoutes.js';
 
 // App setup
 const app = express();
@@ -17,6 +18,7 @@ app.use(cors());
 
 // api endpoints
 app.use('/api/user', router);
+app.use('/api/products', productRouter);
 
 app.get('/', (req, res) => {
   res.send('Welcome to the X-stop API');
