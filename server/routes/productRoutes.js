@@ -1,19 +1,18 @@
 import express from 'express';
 import {
-  getAllProducts,
-  getProductById,
-  createProduct,
-  updateProduct,
-  deleteProduct,
+  addProduct,
+  listProducts,
+  removeProduct,
+  getProductInfo
 } from '../controllers/productController.js';
+import upload from '../middleware/multer.js';
 
 const productRouter = express.Router();
 
 // Routes for product management
-productRouter.get('/', getAllProducts);
-productRouter.get('/:id', getProductById);
-productRouter.post('/', createProduct);
-productRouter.put('/:id', updateProduct);
-productRouter.delete('/:id', deleteProduct);
+productRouter.post('/add', upload.fields([{name:'image1',maxCount:1},{name:'image2',maxCount:1},{name:'image3',maxCount:1},{name:'image4',maxCount:1}]), addProduct);
+productRouter.get('/list', listProducts);
+productRouter.delete('/remove', removeProduct);
+productRouter.get('/info', getProductInfo);
 
 export default productRouter;
